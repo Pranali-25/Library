@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+            <span id="modeIcon" class="icon-sun">☀️</span>
+            <span id="modeIcon" class="icon-moon">🌙</span>
+        </div>
+
+        <!-- User Profile -->
+        <div class="user-profile">
+            <h2>Welcome, <span id="username">User</span></h2>
+            <button id="editProfile">Edit Profile</button>
+        </div>
+
+        <!-- Search Bar -->
+        <input type="text" id="searchBar" placeholder="Search for books" />
+
+        <!-- Form to Add/Edit Book -->
+        <div class="form-container">
+            <form id="bookForm">
+                <div>
+                    <label for="title">Book Title:</label>
+                    <input type="text" id="title" placeholder="Enter book title" required>
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" placeholder="Enter author name" required>
+                </div>
+                <div>
+                    <label for="availability">Availability:</label>
+                    <select id="availability" required>
+                        <option value="available">Available</option>
+                        <option value="checked-out">Checked Out</option>
+                        <option value="reserved">Reserved</option>
+                    </select>
+                </div>
+                <div class="submit-container">
+                    <button type="submit">Save Book</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Table to Display Books -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="bookTableBody">
+                <!-- Books will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <!-- Book Details Page -->
+        <div id="bookDetails" style="display: none;">
+            <h2>Book Title</h2>
+            <p>Author: <span id="bookAuthor"></span></p>
+            <p>Summary: <span id="bookSummary"></span></p>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+
+        <!-- Review Form -->
+        <form id="reviewForm">
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" min="1" max="5" required>
+            <label for="review">Review:</label>
+            <textarea id="review" placeholder="Write a review"></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+        <div id="reviewsContainer"></div>
+
+        <!-- Edit History -->
+        <div id="editHistoryContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

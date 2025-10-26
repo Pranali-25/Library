@@ -1,0 +1,178 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-container, #reviewForm {
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.status {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.status.available {
+    background-color: #28a745;
+    color: white;
+}
+
+.status.checked-out {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status.reserved {
+    background-color: #ffc107;
+    color: white;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode input, 
+body.dark-mode button, 
+body.dark-mode table {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.icon-sun, .icon-moon {
+    font-size: 24px;
+    margin-left: 10px;
+    transition: opacity 0.3s;
+}
+
+/* Initially, show sun icon */
+.icon-moon {
+    opacity: 0;
+}
+
+/* Dark mode styles */
+body.dark-mode .icon-sun {
+    opacity: 0;
+}
+
+body.dark-mode .icon-moon {
+    opacity: 1;
+}
+
+/* Slider CSS for Dark Mode */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+    width: 100%;
+    height: 100%;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.user-profile {
+    margin: 20px 0;
+}
